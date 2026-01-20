@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Painel Davi Walker</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #ff0;
+    margin-bottom: 30px;
+  }
+
+  .module {
+    margin: 10px auto;
+    padding: 20px;
+    width: 300px;
+    background: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 18px;
+  }
+
+  .module.active {
+    background: #ff0; /* luz acesa amarelo */
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff0;
+  }
+
+  .module:hover {
+    transform: scale(1.02);
+  }
+</style>
+</head>
+<body>
+<h1>Painel de Progresso Davi Walker</h1>
+
+<div class="module" id="marca">⚡ Definir Marca / Canal</div>
+<div class="module" id="avatar">🎨 Criar Avatar / Logo</div>
+<div class="module" id="redes">🌐 Redes Sociais</div>
+<div class="module" id="conteudo">🎥 Conteúdo Inicial</div>
+<div class="module" id="gravacao">📹 Gravação</div>
+<div class="module" id="edicao">✂️ Edição</div>
+<div class="module" id="publicacao">🚀 Publicação</div>
+<div class="module" id="produto">💼 Produtos / Serviços</div>
+<div class="module" id="monetizacao">💰 Monetização</div>
+
+<script>
+  const modules = document.querySelectorAll('.module');
+
+  modules.forEach(module => {
+    module.addEventListener('click', () => {
+      module.classList.toggle('active');
+      if(module.classList.contains('active')){
+        alert(`✅ Etapa concluída: ${module.textContent}`);
+      } else {
+        alert(`⚠️ Etapa reiniciada: ${module.textContent}`);
+      }
+    });
+  });
+</script>
+</body>
+</html>
